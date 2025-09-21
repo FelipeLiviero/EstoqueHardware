@@ -1,25 +1,46 @@
+import jakarta.annotation.Generated;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
+
+@Entity
+
+@table(name = "Produtos")
 public class Produto {
-    private int codigo;
+    @Id // Gera Id unico e obrigatorio no BD
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @NotBlank(message = "O campo Tipo de produto e obrigatoeio")
     private int tipo_produto;
+
+    @NotBlank(message = "O campo Marca e obrigatorio")
+    @Size(max = 100, mesage = "O nome deve ter no maximo 100 caracteres")
     private String marca;
+
+    @Positive(message = "A quantidade de memoria tem que ser um numero positivo")
     private int memoria;
-    private int quantidade;
+
+    private int quantidade; // Ira ser atribuida apos a criacao do produto
 
     public Produto(int codigo, int tipo_produto, String marca, int memoria, int quantidade) {
-        this.codigo = codigo;
         this.tipo_produto = tipo_produto;
+        this.nome = nome;
         this.marca = marca;
         this.memoria = memoria;
         this.quantidade = quantidade;
     }
 
     // Métodos Get
-    public int getCodigo() {
-        return codigo;
-    }
-
     public int getTipo_produto() {
         return tipo_produto;
+    }
+
+    public String getNome() {
+        return nome;
     }
 
     public String getMarca() {
@@ -35,12 +56,12 @@ public class Produto {
     }
 
     // Métodos Set corrigidos
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
     public void setTipo_produto(int tipo_produto) {
         this.tipo_produto = tipo_produto;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public void setMarca(String marca) {
