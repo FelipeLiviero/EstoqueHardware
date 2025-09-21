@@ -12,23 +12,24 @@ public class Servlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         try {
-            int codigo = Integer.parseInt(request.getParameter("codigo"));
             int tipo_produto = Integer.parseInt(request.getParameter("tipo_produto"));
+            String nome = request.getParameter("nome");
             String marca = request.getParameter("marca");
             int memoria = Integer.parseInt(request.getParameter("memoria"));
             int quantidade = Integer.parseInt(request.getParameter("quantidade"));
             boolean cadastrar = Boolean.parseBoolean(request.getParameter("cadastrar"));
             int confirmar_acao = Integer.parseInt(request.getParameter("confirmar_acao"));
 
-            request.setAttribute("codigo", codigo);
+            // Atribui valores aos objetos
             request.setAttribute("tipo_produto", tipo_produto);
+            request.setAttribute("nome", nome);
             request.setAttribute("marca", marca);
             request.setAttribute("memoria", memoria);
             request.setAttribute("quantidade", quantidade);
             request.setAttribute("cadastrar", cadastrar);
             request.setAttribute("confirmar_acao", confirmar_acao);
 
-            // Encaminha para uma página JSP (exemplo)
+            // Encaminha para uma página JSP
             request.getRequestDispatcher("resultado.jsp").forward(request, response);
 
         } catch (Exception e) {
