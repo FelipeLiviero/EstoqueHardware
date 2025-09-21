@@ -13,7 +13,7 @@ public class Produto {
         this.quantidade = quantidade;
     }
 
-    // Metodos Get
+    // Métodos Get
     public int getCodigo() {
         return codigo;
     }
@@ -34,24 +34,24 @@ public class Produto {
         return quantidade;
     }
 
-    //Metodos Set
-    public void setCodigo() {
+    // Métodos Set corrigidos
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 
-    public void setTipo_produto() {
+    public void setTipo_produto(int tipo_produto) {
         this.tipo_produto = tipo_produto;
     }
 
-    public void setMarca() {
+    public void setMarca(String marca) {
         this.marca = marca;
     }
 
-    public void setMemoria() {
+    public void setMemoria(int memoria) {
         this.memoria = memoria;
     }
 
-    public void setQuantidade () {
+    public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
 }
