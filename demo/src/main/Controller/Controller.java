@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestController
 @RequestMapping("/EstoqueHardware")
 
-public class Controller {
+public class controller {
     
     @Autowired
     public Controller(Service service) {

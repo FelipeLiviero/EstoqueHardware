@@ -4,7 +4,7 @@ import jakarta.servlet.annotation.*;
 import java.io.*;
 
 @WebServlet(name = "EstoqueHardware", value = "/EstoqueHardware")
-public class Servlet extends HttpServlet {
+public class servlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {

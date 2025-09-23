@@ -9,7 +9,7 @@ import jakarta.validation.constraints.Positive;
 @Entity
 
 @table(name = "Produtos")
-public class Produto {
+public class produto {
     @Id // Gera Id unico e obrigatorio no BD
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

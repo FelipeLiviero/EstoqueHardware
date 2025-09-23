@@ -5,7 +5,7 @@ import demo.src.main.model;
 import jakarta.servlet.annotation.WebServlet;
 
 @Service
-public class Service {
+public class service {
     @Autowired
     private ProdutoRepository produtoRepository;
     
