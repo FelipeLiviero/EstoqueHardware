@@ -1,0 +1,55 @@
+<form action="/produtos" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+    <div class="mb-3">
+        <label for="tipo" class="form-label">Tipo</label>
+        <select class="form-select" id="tipo" name="tipoProduto" required>
+            <option value="" selected disabled>Escolha o tipo do produto</option>
+            <option value="1">Processador</option>
+            <option value="2">Placa de vídeo</option>
+            <option value="3">Memória RAM</option>
+            <option value="4">HD / SSD / M.2</option>
+            <option value="5">Placa mãe</option>
+        </select>
+        <div class="invalid-feedback">Selecione o tipo do produto.</div>
+    </div>
+
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" name="nome" required maxlength="100">
+        <div class="invalid-feedback">Digite o nome do produto.</div>
+    </div>
+
+    <div class="mb-3">
+        <label for="marca" class="form-label">Marca</label>
+        <input type="text" class="form-control" id="marca" name="marca" maxlength="50">
+    </div>
+
+    <div class="mb-3">
+        <label for="memoria" class="form-label">Memória (GB)</label>
+        <input type="number" class="form-control" id="memoria" name="memoria" min="0">
+    </div>
+
+    <div class="mb-3">
+        <label for="quantidade" class="form-label">Quantidade</label>
+        <input type="number" class="form-control" id="quantidade" name="quantidade" required min="1">
+        <div class="invalid-feedback">Informe a quantidade (mínimo 1).</div>
+    </div>
+
+    <button type="submit" class="btn btn-success">Salvar</button>
+    <a href="/produtos/produtos" class="btn btn-secondary ms-2">Cancelar</a>
+</form>
+
+<script>
+    (() => {
+        'use strict';
+        const forms = document.querySelectorAll('.needs-validation');
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    })();
+</script>
