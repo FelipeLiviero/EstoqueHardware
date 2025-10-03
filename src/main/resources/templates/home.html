@@ -7,7 +7,6 @@
 </head>
 <body>
 
-<!-- Barra superior -->
 <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand">Produtos Cadastrados</a>
@@ -18,18 +17,17 @@
     </div>
 </nav>
 
-<!-- Lista de produtos -->
 <div class="container mt-4">
     <div class="row">
         <div th:each="produto : ${produtos}" class="col-md-4 mb-4">
             <div class="card h-100">
-                <img th:src="@{'/images/' + ${produto.imagem}}" class="card-img-top" alt="Imagem do produto">
+                <img th:src="@{'/produtos/imagem/' + ${produto.id}}" class="card-img-top" alt="Imagem do produto"/>
                 <div class="card-body">
                     <h5 class="card-title" th:text="${produto.nome}">Nome</h5>
                     <p class="card-text">
-                        <strong>Marca:</strong> <span th:text="${produto.marca}">Marca</span><br>
-                        <strong>Tipo:</strong> <span th:text="${produto.tipo}">Tipo</span><br>
-                        <strong>Memória:</strong> <span th:text="${produto.memoria}">Memória</span> GB<br>
+                        <strong>Marca:</strong> <span th:text="${produto.marca}">Marca</span><br/>
+                        <strong>Tipo:</strong> <span th:text="${produto.tipoProduto}">Tipo</span><br/>
+                        <strong>Memória:</strong> <span th:text="${produto.memoria}">Memória</span> GB<br/>
                         <strong>Quantidade:</strong> <span th:text="${produto.quantidade}">Quantidade</span>
                     </p>
                 </div>
@@ -38,11 +36,8 @@
     </div>
 </div>
 
-<!-- Botão que abre o modal -->
-<button type="button" class="btn btn-success position-fixed bottom-0 end-0 m-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="height: 50px; width: 50px;">+</button>
-
-<!-- Modal de cadastro -->
-<div th:replace="::modal ::modal"></div>
+<!-- Botão para abrir modal -->
+<button type="button" class="btn btn-success position-fixed bottom-0 end-0 m-3" style="height: 50px; width: 50px;">+</button>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

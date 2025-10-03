@@ -1,5 +1,10 @@
 <form action="/produtos" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
     <div class="mb-3">
+        <label for="imagem" class="form-label">Imagem</label>
+        <input type="file" class="form-control" id="imagem" name="imagem"/>
+    </div>
+
+    <div class="mb-3">
         <label for="tipo" class="form-label">Tipo</label>
         <select class="form-select" id="tipo" name="tipoProduto" required>
             <option value="" selected disabled>Escolha o tipo do produto</option>
@@ -12,30 +17,10 @@
         <div class="invalid-feedback">Selecione o tipo do produto.</div>
     </div>
 
-    <div class="mb-3">
-        <label for="nome" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="nome" name="nome" required maxlength="100">
-        <div class="invalid-feedback">Digite o nome do produto.</div>
-    </div>
-
-    <div class="mb-3">
-        <label for="marca" class="form-label">Marca</label>
-        <input type="text" class="form-control" id="marca" name="marca" maxlength="50">
-    </div>
-
-    <div class="mb-3">
-        <label for="memoria" class="form-label">Memória (GB)</label>
-        <input type="number" class="form-control" id="memoria" name="memoria" min="0">
-    </div>
-
-    <div class="mb-3">
-        <label for="quantidade" class="form-label">Quantidade</label>
-        <input type="number" class="form-control" id="quantidade" name="quantidade" required min="1">
-        <div class="invalid-feedback">Informe a quantidade (mínimo 1).</div>
-    </div>
+    <!-- restante dos campos -->
 
     <button type="submit" class="btn btn-success">Salvar</button>
-    <a href="/produtos/produtos" class="btn btn-secondary ms-2">Cancelar</a>
+    <a href="/produtos" class="btn btn-secondary ms-2">Cancelar</a>
 </form>
 
 <script>

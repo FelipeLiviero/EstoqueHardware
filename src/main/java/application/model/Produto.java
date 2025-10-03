@@ -1,4 +1,4 @@
-package application.EstoqueHardware.model;
+package application.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
@@ -29,51 +29,54 @@ public class Produto {
     @Min(value = 1, message = "A quantidade deve ser pelo menos 1")
     private Integer quantidade;
 
+    // Getters e Setters
+
     public Long getId() {
         return id;
     }
-
     public void setId(Long id){
         this.id = id;
     }
 
-    public String getTipo_produto() {
-        return tipo_produto;
+    public byte[] getImagem() {
+        return imagem;
+    }
+    public void setImagem(byte[] imagem) {
+        this.imagem = imagem;
     }
 
-    public void setTipo_produto(String tipo_produto) {
-        this.tipo_produto = tipo_produto;
+    public Integer getTipoProduto() {
+        return tipoProduto;
+    }
+    public void setTipoProduto(Integer tipoProduto) {
+        this.tipoProduto = tipoProduto;
     }
 
-    public void getNome(){
+    public String getNome() {
+        return nome;
+    }
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public String setNome(String nome) {
-        this.nome = nome;
+    public String getMarca() {
+        return marca;
     }
-
-    public void getMarca(){
+    public void setMarca(String marca) {
         this.marca = marca;
     }
 
-    public String setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public byte getMemoria() {
+    public Integer getMemoria() {
         return memoria;
     }
-
-    public void setMemoria(byte memoria) {
+    public void setMemoria(Integer memoria) {
         this.memoria = memoria;
     }
 
-    public byte getQuantidade() {
+    public Integer getQuantidade() {
         return quantidade;
     }
-
-    public void setQuantidade(byte quantidade) {
+    public void setQuantidade(Integer quantidade) {
         this.quantidade = quantidade;
     }
 }
